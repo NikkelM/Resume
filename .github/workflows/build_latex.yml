@@ -1,0 +1,81 @@
+name: Build LaTeX documents
+on: push
+jobs:
+  en_no_picture:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: resume_en_no_picture.tex
+      - name: Move files to compiler_output folder
+        run: |
+          mkdir compiler_output
+          cp ./resume_en_no_picture.pdf ./compiler_output/resume_en_no_picture.pdf
+          mv ./resume_en_no_picture.aux ./compiler_output/resume_en_no_picture.aux
+          mv ./resume_en_no_picture.bcf ./compiler_output/resume_en_no_picture.bcf
+          mv ./resume_en_no_picture.log ./compiler_output/resume_en_no_picture.log
+          mv ./resume_en_no_picture.out ./compiler_output/resume_en_no_picture.out
+          mv ./resume_en_no_picture.run.xml ./compiler_output/resume_en_no_picture.run.xml
+          mv ./resume_en_no_picture.toc ./compiler_output/resume_en_no_picture.toc
+      - name: Publish PDF and log files to Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Mollenhauer_Resume_en_no_picture
+          path: compiler_output
+          if-no-files-found: error
+      - name: Generate release tag
+        if: github.ref == 'refs/heads/main'
+        id: tag
+        run: |
+          echo "::set-output name=release_tag::UserBuild_$(date +"%Y.%m.%d_%H-%M")"
+      - name: Release PDF
+        uses: softprops/action-gh-release@v1
+        if: github.ref == 'refs/heads/main'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.tag.outputs.release_tag }}
+          files: thesis.pdf
+          name: English Resume (no picture) v${{ github.run_number }}
+  en_picture:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: resume_en_picture.tex
+      - name: Move files to compiler_output folder
+        run: |
+          mkdir compiler_output
+          cp ./resume_en_picture.pdf ./compiler_output/resume_en_picture.pdf
+          mv ./resume_en_picture.aux ./compiler_output/resume_en_picture.aux
+          mv ./resume_en_picture.bcf ./compiler_output/resume_en_picture.bcf
+          mv ./resume_en_picture.log ./compiler_output/resume_en_picture.log
+          mv ./resume_en_picture.out ./compiler_output/resume_en_picture.out
+          mv ./resume_en_picture.run.xml ./compiler_output/resume_en_picture.run.xml
+          mv ./resume_en_picture.toc ./compiler_output/resume_en_picture.toc
+      - name: Publish PDF and log files to Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Mollenhauer_Resume_en_picture
+          path: compiler_output
+          if-no-files-found: error
+      - name: Generate release tag
+        if: github.ref == 'refs/heads/main'
+        id: tag
+        run: |
+          echo "::set-output name=release_tag::UserBuild_$(date +"%Y.%m.%d_%H-%M")"
+      - name: Release PDF
+        uses: softprops/action-gh-release@v1
+        if: github.ref == 'refs/heads/main'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.tag.outputs.release_tag }}
+          files: thesis.pdf
+          name: English Resume v${{ github.run_number }}
