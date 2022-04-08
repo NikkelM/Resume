@@ -24,7 +24,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         id: tag
         run: |
-          echo "::set-output name=release_tag::UserBuild_$(date +"%Y.%m.%d_%H-%M")"
+          echo "::set-output name=release_tag::en_no_picture_$(date +"%Y.%m.%d_%H-%M")"
       - name: Release PDF
         uses: softprops/action-gh-release@v1
         if: github.ref == 'refs/heads/main'
@@ -57,7 +57,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         id: tag
         run: |
-          echo "::set-output name=release_tag::UserBuild_$(date +"%Y.%m.%d_%H-%M")"
+          echo "::set-output name=release_tag::en_picture_$(date +"%Y.%m.%d_%H-%M")"
       - name: Release PDF
         uses: softprops/action-gh-release@v1
         if: github.ref == 'refs/heads/main'
