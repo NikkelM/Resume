@@ -14,12 +14,6 @@ jobs:
         run: |
           mkdir compiler_output
           cp ./resume_en_no_picture.pdf ./compiler_output/resume_en_no_picture.pdf
-          mv ./resume_en_no_picture.aux ./compiler_output/resume_en_no_picture.aux
-          mv ./resume_en_no_picture.bcf ./compiler_output/resume_en_no_picture.bcf
-          mv ./resume_en_no_picture.log ./compiler_output/resume_en_no_picture.log
-          mv ./resume_en_no_picture.out ./compiler_output/resume_en_no_picture.out
-          mv ./resume_en_no_picture.run.xml ./compiler_output/resume_en_no_picture.run.xml
-          mv ./resume_en_no_picture.toc ./compiler_output/resume_en_no_picture.toc
       - name: Publish PDF and log files to Artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -53,12 +47,6 @@ jobs:
         run: |
           mkdir compiler_output
           cp ./resume_en_picture.pdf ./compiler_output/resume_en_picture.pdf
-          mv ./resume_en_picture.aux ./compiler_output/resume_en_picture.aux
-          mv ./resume_en_picture.bcf ./compiler_output/resume_en_picture.bcf
-          mv ./resume_en_picture.log ./compiler_output/resume_en_picture.log
-          mv ./resume_en_picture.out ./compiler_output/resume_en_picture.out
-          mv ./resume_en_picture.run.xml ./compiler_output/resume_en_picture.run.xml
-          mv ./resume_en_picture.toc ./compiler_output/resume_en_picture.toc
       - name: Publish PDF and log files to Artifacts
         uses: actions/upload-artifact@v2
         with:
