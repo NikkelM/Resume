@@ -33,7 +33,7 @@ jobs:
         with:
           tag_name: ${{ steps.tag.outputs.release_tag }}
           files: resume_en_no_picture.pdf
-          name: Resume (no picture) v${{ github.run_number }}
+          name: Resume v${{ github.run_number }}
   en_picture:
     runs-on: ubuntu-latest
     steps:
