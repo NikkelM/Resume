@@ -1,4 +1,4 @@
-name: Build LaTeX documents
+name: Build latest CV
 on: push
 jobs:
   en_no_picture:

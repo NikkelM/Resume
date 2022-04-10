@@ -46,7 +46,7 @@
   \ifthenelse{\equal{#1}{\string 1}}
     {\newcommand\headerview{
 		\begin{minipage}{0.25\linewidth}
-			\profpic{0.18}{images/profile_square}
+			\profpic{0.18}{images/profile}
 		\end{minipage}% 
 		\hfill
 		\begin{minipage}{0.45\linewidth}
