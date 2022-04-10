@@ -9,15 +9,15 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: resume_en_no_picture.tex
+          root_file: mollenhauer_resume_en_no_picture.tex
       - name: Move files to compiler_output folder
         run: |
           mkdir compiler_output
-          cp ./resume_en_no_picture.pdf ./compiler_output/resume_en_no_picture.pdf
+          cp ./mollenhauer_resume_en_no_picture.pdf ./compiler_output/mollenhauer_resume_en_no_picture.pdf
       - name: Publish PDF and log files to Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: Mollenhauer_Resume_en_no_picture
+          name: mollenhauer_resume_en_no_picture
           path: compiler_output
           if-no-files-found: error
       - name: Generate release tag
@@ -32,7 +32,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.tag.outputs.release_tag }}
-          files: resume_en_no_picture.pdf
+          files: mollenhauer_resume_en_no_picture.pdf
           name: Resume v${{ github.run_number }}
   en_picture:
     runs-on: ubuntu-latest
@@ -42,15 +42,15 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: resume_en_picture.tex
+          root_file: mollenhauer_resume_en_picture.tex
       - name: Move files to compiler_output folder
         run: |
           mkdir compiler_output
-          cp ./resume_en_picture.pdf ./compiler_output/resume_en_picture.pdf
+          cp ./mollenhauer_resume_en_picture.pdf ./compiler_output/mollenhauer_resume_en_picture.pdf
       - name: Publish PDF and log files to Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: Mollenhauer_Resume_en_picture
+          name: mollenhauer_resume_en_picture
           path: compiler_output
           if-no-files-found: error
       - name: Generate release tag
@@ -65,7 +65,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.tag.outputs.release_tag }}
-          files: resume_en_picture.pdf
+          files: mollenhauer_resume_en_picture.pdf
           name: Resume v${{ github.run_number }}
   de_picture:
     runs-on: ubuntu-latest
@@ -75,15 +75,15 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: resume_de_picture.tex
+          root_file: mollenhauer_resume_de_picture.tex
       - name: Move files to compiler_output folder
         run: |
           mkdir compiler_output
-          cp ./resume_de_picture.pdf ./compiler_output/resume_de_picture.pdf
+          cp ./mollenhauer_resume_de_picture.pdf ./compiler_output/mollenhauer_resume_de_picture.pdf
       - name: Publish PDF and log files to Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: Mollenhauer_Resume_de_picture
+          name: mollenhauer_resume_de_picture
           path: compiler_output
           if-no-files-found: error
       - name: Generate release tag
@@ -98,7 +98,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.tag.outputs.release_tag }}
-          files: resume_de_picture.pdf
+          files: mollenhauer_resume_de_picture.pdf
           name: Resume v${{ github.run_number }}
   de_no_picture:
     runs-on: ubuntu-latest
@@ -108,15 +108,15 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: resume_de_no_picture.tex
+          root_file: mollenhauer_resume_de_no_picture.tex
       - name: Move files to compiler_output folder
         run: |
           mkdir compiler_output
-          cp ./resume_de_no_picture.pdf ./compiler_output/resume_de_no_picture.pdf
+          cp ./mollenhauer_resume_de_no_picture.pdf ./compiler_output/mollenhauer_resume_de_no_picture.pdf
       - name: Publish PDF and log files to Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: Mollenhauer_Resume_de_no_picture
+          name: mollenhauer_resume_de_no_picture
           path: compiler_output
           if-no-files-found: error
       - name: Generate release tag
@@ -131,5 +131,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.tag.outputs.release_tag }}
-          files: resume_de_no_picture.pdf
+          files: mollenhauer_resume_de_no_picture.pdf
           name: Resume v${{ github.run_number }}
