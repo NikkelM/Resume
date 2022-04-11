@@ -81,7 +81,7 @@
     
 \newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize LinkedIn}}
 \newcommand{\linkedinview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize Github}}
-\newcommand{\portfolioview}{\href{\@portfolio}{\footnotesize Portfolio}}
+\newcommand{\portfolioview}{\href{\@portfolio}{\footnotesize Website}}
 
 \newcommand{\name}{%
     {\large \@firstname \ \textsc{\@lastname}}
