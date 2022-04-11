@@ -26,6 +26,7 @@
 \newcommand*{\setthemecolor}[1]{\def\@themecolor{#1}}
 \newcommand*{\setlinkedinaccount}[1]{\def\@linkedinaccount{#1}}
 \newcommand*{\setgithubaccount}[1]{\def\@githubaccount{#1}}
+\newcommand*{\setportfolio}[1]{\def\@portfolio{#1}}
 
 
 %Setup for coverletter
@@ -78,8 +79,9 @@
 %contactsubviews 
     
     
-\newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize linkedin}}
-\newcommand{\linkedinview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize github}}
+\newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize LinkedIn}}
+\newcommand{\linkedinview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize Github}}
+\newcommand{\portfolioview}{\href{\@portfolio}{\footnotesize Portfolio}}
 
 \newcommand{\name}{%
     {\large \@firstname \ \textsc{\@lastname}}
@@ -88,7 +90,7 @@
 \newcommand{\contact}{%
         {\small \@address  \cps \@mobile \\ \@mail%
         \\%
-        \linkedinview \cps \githubview \\ 
+        \linkedinview \cps \githubview \cps \portfolioview\\ 
         } % 
 }
 
