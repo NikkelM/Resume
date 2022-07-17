@@ -1,6 +1,8 @@
 # Custom
 
 /.vscode
+abc.tex
+coverletter_text.tex
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
