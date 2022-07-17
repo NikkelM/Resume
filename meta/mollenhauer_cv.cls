@@ -99,7 +99,8 @@
 \newcommand\coverletter[1]{ 
 \\  \coverlettersubview 
 \section{} \vspace{1ex} 
-\textbf{ Dear \@contactperson, \\[0.1cm]}
+% \textbf{ Dear \@contactperson, \\[0.1cm]}
+\textbf{}
   #1
 }
 
