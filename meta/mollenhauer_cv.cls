@@ -79,9 +79,9 @@
 %contactsubviews 
     
     
-\newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize LinkedIn}}
-\newcommand{\linkedinview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize Github}}
-\newcommand{\portfolioview}{\href{\@portfolio}{\footnotesize Website}}
+\newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize Linkedin.com/in/nikkel-mollenhauer}}
+\newcommand{\linkedinview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize Github.com/NikkelM}}
+\newcommand{\portfolioview}{\href{\@portfolio}{\faGlobe\ \footnotesize NikkelM.github.io}}
 
 \newcommand{\name}{%
     {\large \@firstname \ \textsc{\@lastname}}
