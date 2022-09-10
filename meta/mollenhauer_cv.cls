@@ -90,7 +90,7 @@
 \newcommand{\contact}{%
         {\small \@address  \cps \@mobile \\ \@mail%
         \\%
-        \linkedinview \cps \githubview \cps \portfolioview\\ 
+        \linkedinview \\ \githubview \\ \portfolioview\\ 
         } % 
 }
 
