@@ -47,7 +47,7 @@
   \ifthenelse{\equal{#1}{\string 1}}
     {\newcommand\headerview{
 		\begin{minipage}{0.25\linewidth}
-			\profpic{0.18}{images/profile}
+			\profpic{0.15}{images/profile}
 		\end{minipage}% 
 		\hfill
 		\begin{minipage}{0.45\linewidth}
@@ -131,7 +131,7 @@ Position: & \@claimedposition \\
   {}{0em}                      % Can be used to give a prefix to all sections, like 'Section ...'
   {\ruleafter}                           % Can be used to insert code before the heading
 
-\titlespacing*{\section}{-1pt}{0pt}{0pt}
+\titlespacing*{\section}{-1pt}{-5pt}{0pt}
 
 % Textview commands
 
@@ -144,15 +144,15 @@ Position: & \@claimedposition \\
 }
 
 \newcommand{\datedexperience}[2]{%
-  \begin{small} \mbox { \hspace{1em} \scshape \textbf{#1} } \end{small} \hfill \datetext{#2}\\[0.01cm] %
+  \begin{small} \mbox { \hspace{1em} \scshape \textbf{#1} } \end{small} \hfill \datetext{#2}\\[0.05cm] %
 }
 
 \newcommand{\explanation}[1]{%
-    \mbox { \scshape \hspace{1em} \footnotesize #1}\\[0.1cm]
+    \mbox { \scshape \hspace{1em} \footnotesize #1}\\[0.2cm]
 }
 
 \newcommand{\explanationdetail}[1]{%
-    \indent \begin{minipage}{0.96\linewidth} \footnotesize #1 \end{minipage} \\[0.1cm]
+    \indent \begin{minipage}{0.96\linewidth} \footnotesize #1 \end{minipage} \\[0.2cm]
 }
 
 \newcommand{\itemwithtext}[1]{%
@@ -170,12 +170,6 @@ Position: & \@claimedposition \\
 
 \newcommand\createtablecontent[1]{%
     \foreach \x [count=\xi] in {#1} {\ifthenelse{\xi=1}{\x}{\\ \x}}
-}
-
-\newcommand\createskillsanothertry[1]{%not used
-  \begin{tabular}{r|l}
-      \createtablecontent{#1}
-        \end{tabular}
 }
 
 \newcommand\createskills[1]{%
@@ -199,5 +193,5 @@ Position: & \@claimedposition \\
 
 \newcommand\createfootnote{%
   \renewcommand{\footnotesize}{\fontsize{7pt}{11pt}\selectfont}
-    \renewcommand\footnoterule{\rule{0.3\linewidth}{0.5pt}}
+  	\renewcommand*\footnoterule{}
     \let\thefootnote\relax\footnote{\today}}
