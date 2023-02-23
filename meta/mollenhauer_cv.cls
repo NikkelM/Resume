@@ -46,11 +46,11 @@
 \newcommand{\setpicture}[1]{%
   \ifthenelse{\equal{#1}{\string 1}}
     {\newcommand\headerview{
-		\begin{minipage}{0.25\linewidth}
-			\profpic{0.15}{images/profile}
+		\begin{minipage}{0.2\linewidth}
+			\profpic{0.125}{images/profile}
 		\end{minipage}% 
 		\hfill
-		\begin{minipage}{0.45\linewidth}
+		\begin{minipage}{0.8\linewidth}
 			\center \name \\%[0.05cm] 
 			\contact % address \ mobile \\ mail
 		\end{minipage}
