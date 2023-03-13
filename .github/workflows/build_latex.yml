@@ -17,15 +17,11 @@ jobs:
           root_file: |
             mollenhauer_resume_en_no_picture.tex
             mollenhauer_resume_en_picture.tex
-            mollenhauer_resume_de_no_picture.tex
-            mollenhauer_resume_de_picture.tex
       - name: Move files to compiler_output folder
         run: |
           mkdir compiler_output
           cp ./mollenhauer_resume_en_no_picture.pdf ./compiler_output/mollenhauer_resume_en_no_picture.pdf
           cp ./mollenhauer_resume_en_picture.pdf ./compiler_output/mollenhauer_resume_en_picture.pdf
-          cp ./mollenhauer_resume_de_no_picture.pdf ./compiler_output/mollenhauer_resume_de_no_picture.pdf
-          cp ./mollenhauer_resume_de_picture.pdf ./compiler_output/mollenhauer_resume_de_picture.pdf
       - name: Publish PDF and log files to Artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -47,6 +43,4 @@ jobs:
           files: |
             mollenhauer_resume_en_no_picture.pdf
             mollenhauer_resume_en_picture.pdf
-            mollenhauer_resume_de_no_picture.pdf
-            mollenhauer_resume_de_picture.pdf
           name: Resume v${{ github.run_number }}
