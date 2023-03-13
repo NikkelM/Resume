@@ -20,7 +20,7 @@ jobs:
       - name: Move files to compiler_output folder
         run: |
           mkdir compiler_output
-          cp ./mollenhauer_resume_en.pdf ./compiler_output/mollenhauer_resume.pdf
+          cp ./mollenhauer_resume.pdf ./compiler_output/mollenhauer_resume.pdf
           cp ./mollenhauer_resume_picture.pdf ./compiler_output/mollenhauer_resume_picture.pdf
       - name: Publish PDF and log files to Artifacts
         uses: actions/upload-artifact@v2
