@@ -7,7 +7,7 @@
 \RequirePackage{pgffor}
 \RequirePackage{titlesec}
 \RequirePackage{tikz}
-\RequirePackage[left=0.75in,top=0.3in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\RequirePackage[left=0.6in,top=0.25in,right=0.6in,bottom=0.2in]{geometry} % Document margins
 \RequirePackage{hyperref}
 \RequirePackage{fontawesome}
 \RequirePackage{mfirstuc}
@@ -35,7 +35,6 @@
 \newcommand*{\setcontactperson}[1]{\def\@contactperson{#1}}
 \newcommand*{\setclaimedposition}[1]{\def\@claimedposition{#1}}
 
-
 \hypersetup{
     colorlinks=true,
     urlcolor=cyan,
@@ -47,7 +46,7 @@
   \ifthenelse{\equal{#1}{\string 1}}
     {\newcommand\headerview{
 		\begin{minipage}{0.2\linewidth}
-			\profpic{0.125}{images/profile}
+			\profpic{0.1}{images/profile}
 		\end{minipage}% 
 		\hfill
 		\begin{minipage}{0.8\linewidth}
@@ -63,7 +62,7 @@
 		}}%
 }
 
-%profilpicture
+%profilepicture
 
 \newsavebox{\picbox}
 \newcommand{\profpic}[2]{%
@@ -77,8 +76,7 @@
     {};}
     
 %contactsubviews 
-    
-    
+
 \newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize Linkedin.com/in/nikkel-mollenhauer}}
 \newcommand{\linkedinview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize Github.com/NikkelM}}
 \newcommand{\portfolioview}{\href{\@portfolio}{\faGlobe\ \footnotesize NikkelM.github.io}}
@@ -88,10 +86,9 @@
 }
 
 \newcommand{\contact}{%
-        {\small \@address  \cps \@mobile \\ \@mail%
-        \\%
-        \linkedinview \\ \githubview \\ \portfolioview\\ 
-        } % 
+        {\small \@mail\ \cpshalf \@mobile\ \\
+        \linkedinview\ \cpshalf \githubview\ \cpshalf \portfolioview\ \\ 
+        }
 }
 
 % Covverletterview
@@ -148,11 +145,11 @@ Position: & \@claimedposition \\
 }
 
 \newcommand{\explanation}[1]{%
-    \mbox { \scshape \hspace{1em} \footnotesize #1}\\[0.2cm]
+    \mbox { \scshape \hspace{1em} \footnotesize #1}\\[0.15cm]
 }
 
 \newcommand{\explanationdetail}[1]{%
-    \indent \begin{minipage}{0.96\linewidth} \footnotesize #1 \end{minipage} \\[0.2cm]
+    \indent \begin{minipage}{0.96\linewidth} \footnotesize #1 \end{minipage} \\[0.15cm]
 }
 
 \newcommand{\itemwithtext}[1]{%
