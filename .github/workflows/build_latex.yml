@@ -16,12 +16,10 @@ jobs:
         with:
           root_file: |
             mollenhauer_resume.tex
-            mollenhauer_resume_picture.tex
       - name: Move files to compiler_output folder
         run: |
           mkdir compiler_output
           cp ./mollenhauer_resume.pdf ./compiler_output/mollenhauer_resume.pdf
-          cp ./mollenhauer_resume_picture.pdf ./compiler_output/mollenhauer_resume_picture.pdf
       - name: Publish PDF and log files to Artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -42,5 +40,4 @@ jobs:
           tag_name: ${{ steps.tag.outputs.release_tag }}
           files: |
             mollenhauer_resume.pdf
-            mollenhauer_resume_picture.pdf
           name: Resume v${{ github.run_number }}
