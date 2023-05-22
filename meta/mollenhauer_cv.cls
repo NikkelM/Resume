@@ -1,7 +1,7 @@
 \RequirePackage[dvipsnames]{xcolor}
-\LoadClass[11pt]{article}
+\LoadClass[12pt]{article}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{meta/mollenhauer_cv}[2022/04/05 CV class]
+\ProvidesClass{meta/mollenhauer_cv}[2023/05/22 CV class]
 \RequirePackage[sfdefault]{noto}
 \RequirePackage{etoolbox}
 \RequirePackage{pgffor}
@@ -91,7 +91,7 @@
         }
 }
 
-% Covverletterview
+% Coverletterview
 
 \newcommand\coverletter[1]{ 
 \\  \coverlettersubview 
@@ -133,19 +133,19 @@ Position: & \@claimedposition \\
 % Textview commands
 
 \newcommand{\experience}[2]{%
-  \mbox { \hspace{1em} \scshape \textbf{#1} }%
+  \mbox { \hspace{1em} \textbf{#1} }%
 }
 
 \newcommand{\datetext}[1]{%
-{\itshape  \footnotesize \mdseries  \color{black!60!\@themecolor} #1 } 
+{\footnotesize \mdseries \color{black!60!\@themecolor} #1 } 
 }
 
 \newcommand{\datedexperience}[2]{%
-  \begin{small} \mbox { \hspace{1em} \scshape \textbf{#1} } \end{small} \hfill \datetext{#2}\\[0.05cm] %
+  \begin{small} \mbox { \hspace{1em} \textbf{#1} } \end{small} \hfill \datetext{#2}\\[0.05cm] %
 }
 
 \newcommand{\explanation}[1]{%
-    \mbox { \scshape \hspace{1em} \footnotesize #1}\\[0.15cm]
+    \mbox { \itshape \hspace{1em} \footnotesize #1}\\[0.15cm]
 }
 
 \newcommand{\explanationdetail}[1]{%
