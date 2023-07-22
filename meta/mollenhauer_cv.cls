@@ -77,17 +77,18 @@
     
 %contactsubviews 
 
-\newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize Linkedin.com/in/nikkel-mollenhauer}}
-\newcommand{\linkedinview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize Github.com/NikkelM}}
-\newcommand{\portfolioview}{\href{\@portfolio}{\faGlobe\ \footnotesize NikkelM.github.io}}
+\newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedin\ \footnotesize Linkedin.com/in/nikkel-mollenhauer}}
+\newcommand{\linkedinview}{\href{\@githubaccount}{\faGithub\ \footnotesize Github.com/NikkelM}}
+\newcommand{\portfolioview}{\href{\@portfolio}{\faHome\ \footnotesize NikkelM.github.io}}
+\newcommand{\locationview}{Potsdam, Germany}
 
 \newcommand{\name}{%
     {\large \@firstname \ \textsc{\@lastname}}
 }
 
 \newcommand{\contact}{%
-        {\small \@mail\ \cpshalf \@mobile\ \\
-        \linkedinview\ \cpshalf \githubview\ \cpshalf \portfolioview\ \\ 
+        {\small \@mail\ \cpshalf \@mobile\ \cpshalf \locationview\ \\
+        \linkedinview\ \cpshalf \githubview\ \cpshalf \portfolioview\ \\
         }
 }
 
@@ -140,16 +141,22 @@ Position: & \@claimedposition \\
 {\footnotesize \mdseries \color{black!60!\@themecolor} #1 } 
 }
 
+% To be used with an \explanation right below. Less bottom margin than \datedExperienceTitle
 \newcommand{\datedexperience}[2]{%
   \begin{small} \mbox { \hspace{1em} \textbf{#1} } \end{small} \hfill \datetext{#2}\\[0.05cm] %
 }
 
+
+\newcommand{\datedExperienceTitle}[3]{%
+  \begin{small} \mbox { \hspace{1em} \textbf{#1} } { \textit{#2} } \end{small} \hfill \datetext{#3}\\[0.2cm] %
+}
+
 \newcommand{\explanation}[1]{%
-    \mbox { \itshape \hspace{1em} \footnotesize #1}\\[0.15cm]
+    \mbox { \itshape \hspace{1em} \footnotesize #1}\\[0.2cm]
 }
 
 \newcommand{\explanationdetail}[1]{%
-    \indent \begin{minipage}{0.96\linewidth} \footnotesize #1 \end{minipage} \\[0.15cm]
+    \indent \begin{minipage}{0.96\linewidth} \footnotesize #1 \end{minipage} \\[0.2cm]
 }
 
 \newcommand{\itemwithtext}[1]{%
