@@ -79,7 +79,7 @@
 
 \newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedin\ \footnotesize Linkedin.com/in/nikkel-mollenhauer}}
 \newcommand{\linkedinview}{\href{\@githubaccount}{\faGithub\ \footnotesize Github.com/NikkelM}}
-\newcommand{\portfolioview}{\href{\@portfolio}{\faHome\ \footnotesize NikkelM.github.io}}
+\newcommand{\portfolioview}{\href{\@portfolio}{\faGlobe\ \footnotesize NikkelM.dev}}
 \newcommand{\locationview}{Potsdam, Germany}
 
 \newcommand{\name}{%
