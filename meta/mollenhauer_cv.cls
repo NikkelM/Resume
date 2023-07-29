@@ -15,6 +15,7 @@
 \RequirePackage{lipsum}
 \RequirePackage{array}
 \pagestyle{empty}
+\RequirePackage{enumitem}
 
 %Setup
 
@@ -36,45 +37,45 @@
 \newcommand*{\setclaimedposition}[1]{\def\@claimedposition{#1}}
 
 \hypersetup{
-    colorlinks=true,
-    urlcolor=cyan,
+  colorlinks=true,
+  urlcolor=cyan,
 }
 
 % View commands
 % Header
 \newcommand{\setpicture}[1]{%
   \ifthenelse{\equal{#1}{\string 1}}
-    {\newcommand\headerview{
-		\begin{minipage}{0.2\linewidth}
-			\profpic{0.1}{images/profile}
-		\end{minipage}% 
-		\hfill
-		\begin{minipage}{0.8\linewidth}
-			\center \name \\%[0.05cm] 
-			\contact % address \ mobile \\ mail
-		\end{minipage}
-		}}
-    {\newcommand\headerview{
-		\begin{minipage}{\linewidth}
-			\center \name \\%[0.05cm] 
-			\contact % address \ mobile \\ mail
-		\end{minipage}
-		}}%
+  {\newcommand\headerview{
+      \begin{minipage}{0.2\linewidth}
+        \profpic{0.1}{images/profile}
+      \end{minipage}% 
+      \hfill
+      \begin{minipage}{0.8\linewidth}
+        \center \name \\%[0.05cm]
+        \contact % address \ mobile \\ mail
+      \end{minipage}
+    }}
+  {\newcommand\headerview{
+      \begin{minipage}{\linewidth}
+        \center \name \\%[0.05cm]
+        \contact % address \ mobile \\ mail
+      \end{minipage}
+    }}%
 }
 
 %profilepicture
 
 \newsavebox{\picbox}
 \newcommand{\profpic}[2]{%
-    \savebox{\picbox}{%
+  \savebox{\picbox}{%
     \includegraphics[scale=#1]{#2}}% 
-    \tikz\node [draw, circle,%
+  \tikz\node [draw, circle,%
     line width=4pt, color=white,% 
     minimum width=\wd\picbox,minimum height=\ht\picbox,%
     path picture={ \node at (path picture bounding box.center)% 
-    {\usebox{\picbox}};}]% 
-    {};}
-    
+        {\usebox{\picbox}};}]% 
+  {};}
+
 %contactsubviews 
 
 \newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedin\ \footnotesize Linkedin.com/in/nikkel-mollenhauer}}
@@ -83,30 +84,30 @@
 \newcommand{\locationview}{Potsdam, Germany}
 
 \newcommand{\name}{%
-    {\large \@firstname \ \textsc{\@lastname}}
+  {\large \@firstname \ \textsc{\@lastname}}
 }
 
 \newcommand{\contact}{%
-        {\small \@mail\ \cpshalf \@mobile\ \cpshalf \locationview\ \\
-        \linkedinview\ \cpshalf \githubview\ \cpshalf \portfolioview\ \\
-        }
+  {\small \@mail\ \cpshalf \@mobile\ \cpshalf \locationview\ \\
+      \linkedinview\ \cpshalf \githubview\ \cpshalf \portfolioview\ \\
+    }
 }
 
 % Coverletterview
 
-\newcommand\coverletter[1]{ 
-\\  \coverlettersubview 
-\section{} \vspace{1ex} 
-% \textbf{ Dear \@contactperson, \\[0.1cm]}
-\textbf{}
+\newcommand\coverletter[1]{
+  \\  \coverlettersubview
+  \section{} \vspace{1ex}
+  % \textbf{ Dear \@contactperson, \\[0.1cm]}
+  \textbf{}
   #1
 }
 
 \newcommand\coverlettersubview{
-\begin{tabular}{>{\scshape \bfseries \color{\@themecolor}}l  >{\small }l}
-Company: & \@companyname \\
-Position: & \@claimedposition \\
-\end{tabular}
+  \begin{tabular}{>{\scshape \bfseries \color{\@themecolor}}l  >{\small }l}
+    Company:  & \@companyname     \\
+    Position: & \@claimedposition \\
+  \end{tabular}
 }
 
 
@@ -119,15 +120,24 @@ Position: & \@claimedposition \\
 \newcommand{\cps}{{\color{\@themecolor} \quad$\mid$ \quad}}
 \newcommand{\cpshalf}{{\color{\@themecolor} \hspace{0.2em}$\mid$ \hspace{0.2em}}}
 
-\newcommand{\coloredbullet}{{\color{\@themecolor} \textbullet}}
+\newenvironment{coloreditemize}{
+  \begin{itemize}[
+      leftmargin=20pt, % How much extra space on the left of the itemize environment.
+      label=\textcolor{\@themecolor}{\textbullet},
+      itemsep=0pt,
+      parsep=0pt
+    ]
+    }
+    {\end{itemize}
+}
 
 % Edit section styles
 
 \titleformat{\section}      % Customise the \section command 
-  {\large\bfseries\scshape\raggedright\color{\@themecolor}} % Make the \section headers large (\Large),
-                               % small capitals (\scshape) and left aligned (\raggedright)
-  {}{0em}                      % Can be used to give a prefix to all sections, like 'Section ...'
-  {\ruleafter}                           % Can be used to insert code before the heading
+{\large\bfseries\scshape\raggedright\color{\@themecolor}} % Make the \section headers large (\Large),
+% small capitals (\scshape) and left aligned (\raggedright)
+{}{0em}                      % Can be used to give a prefix to all sections, like 'Section ...'
+{\ruleafter}                           % Can be used to insert code before the heading
 
 \titlespacing*{\section}{-1pt}{-5pt}{0pt}
 
@@ -138,7 +148,7 @@ Position: & \@claimedposition \\
 }
 
 \newcommand{\datetext}[1]{%
-{\footnotesize \mdseries \color{black!60!\@themecolor} #1 } 
+  {\footnotesize \mdseries \color{black!60!\@themecolor} #1 }
 }
 
 % To be used with an \explanation right below. Less bottom margin than \datedExperienceTitle
@@ -152,42 +162,42 @@ Position: & \@claimedposition \\
 }
 
 \newcommand{\explanation}[1]{%
-    \mbox { \itshape \hspace{1em} \footnotesize #1}\\[0.2cm]
+  \mbox { \itshape \hspace{1em} \footnotesize #1}\\[0.2cm]
 }
 
 \newcommand{\explanationdetail}[1]{%
-    \indent \begin{minipage}{0.96\linewidth} \footnotesize #1 \end{minipage} \\[0.2cm]
+  \indent \begin{minipage}{0.96\linewidth} \footnotesize #1 \end{minipage} \\[0.2cm]
 }
 
 \newcommand{\itemwithtext}[1]{%
-    \begin{minipage}{\linewidth} \footnotesize \item #1 \end{minipage}
+  \begin{minipage}{\linewidth} \footnotesize \item #1 \end{minipage}
 }
 
 \newcommand{\addblocktext}[2]{%
-  \section{#1} 
+  \section{#1}
   \indent \explanationdetail{\hspace{2ex} #2}
 }
 
 \newcommand\createskill[2]{%
-    \textsc{\textbf{#1}} & #2
+  \textsc{\textbf{#1}} & #2
 }
 
 \newcommand\createtablecontent[1]{%
-    \foreach \x [count=\xi] in {#1} {\ifthenelse{\xi=1}{\x}{\\ \x}}
+  \foreach \x [count=\xi] in {#1} {\ifthenelse{\xi=1}{\x}{\\ \x}}
 }
 
 \newcommand\createskills[1]{%
-\explanationdetail{
-  \begin{tabular}{rl}
-    \makeatletter
-    \@for\thisitem:=#1\do{\thisitem\\[0.1cm]}
-    \makeatother
+  \explanationdetail{
+    \begin{tabular}{rl}
+      \makeatletter
+      \@for\thisitem:=#1\do{\thisitem \\[0.1cm]}
+      \makeatother
     \end{tabular}
-}
+  }
 }
 
 \newcommand\createbullets[1]{%
-    \renewcommand{\labelitemi}{\coloredbullet}
+  \renewcommand{\labelitemi}{\coloredbullet}
   \begin{itemize}
     \makeatletter
     \@for\thisitem:=#1\do{\itemwithtext{\thisitem}}
@@ -197,5 +207,5 @@ Position: & \@claimedposition \\
 
 \newcommand\createfootnote{%
   \renewcommand{\footnotesize}{\fontsize{7pt}{11pt}\selectfont}
-  	\renewcommand*\footnoterule{}
-    \let\thefootnote\relax\footnote{\today}}
+  \renewcommand*\footnoterule{}
+  \let\thefootnote\relax\footnote{\today}}
