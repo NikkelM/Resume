@@ -217,4 +217,4 @@
 \newcommand\createfootnote{%
   \renewcommand{\footnotesize}{\fontsize{7pt}{11pt}\selectfont}
   \renewcommand*\footnoterule{}
-  \let\thefootnote\relax\footnote{\today}}
+  \let\thefootnote\relax\footnote{\today{} - Hosted on \href{https://github.com/NikkelM/Resume}{\faGithub{} GitHub}}}
