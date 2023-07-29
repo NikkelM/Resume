@@ -156,11 +156,15 @@
   \begin{small} \mbox { \hspace{1em} \textbf{#1} } \end{small} \hfill \datetext{#2}\\[0.05cm] %
 }
 
-
 \newcommand{\datedExperienceTitle}[3]{%
   \begin{small} \mbox { \hspace{1em} \textbf{#1} } { \textit{#2} } \end{small} \hfill \datetext{#3}\\[0.2cm] %
 }
 
+% Third argument is to be used for a \href
+\newcommand{\datedExperienceTitleLink}[4]{%
+  \begin{small} \mbox { \hspace{1em} \textbf{#1} } { \textit{#2} } \end{small} \begin{footnotesize} {#3} \end{footnotesize} \hfill \datetext{#4}\\[0.2cm] %
+}
+% 
 \newcommand{\explanation}[1]{%
   \mbox { \itshape \hspace{1em} \footnotesize #1}\\[0.2cm]
 }
