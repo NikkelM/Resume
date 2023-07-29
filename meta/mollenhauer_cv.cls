@@ -160,8 +160,13 @@
   \begin{small} \mbox { \hspace{1em} \textbf{#1} } { \textit{#2} } \end{small} \hfill \datetext{#3}\\[0.2cm] %
 }
 
-% Third argument is to be used for a \href
-\newcommand{\datedExperienceTitleLink}[4]{%
+% Second argument is to be used for a \href, will be smaller
+\newcommand{\datedExperienceLink}[3]{%
+  \begin{small} \mbox { \hspace{1em} \textbf{#1} } \end{small} \begin{footnotesize} {#2} \end{footnotesize} \hfill \datetext{#3}\\[0.2cm] %
+}
+
+% Third argument is to be used for a \href. Also includes an italic title/position argument
+\newcommand{\datedExperienceLink}[4]{%
   \begin{small} \mbox { \hspace{1em} \textbf{#1} } { \textit{#2} } \end{small} \begin{footnotesize} {#3} \end{footnotesize} \hfill \datetext{#4}\\[0.2cm] %
 }
 % 
