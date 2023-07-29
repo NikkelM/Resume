@@ -1,3 +1,4 @@
+% !TEX root = ./mollenhauer_resume.tex
 \input{meta/resume_meta_info.tex}
 
 \setpicture{0}
@@ -15,22 +16,31 @@
 %
 \datedExperienceTitle{Hasso-Plattner-Institute}{Student Assistent}{Potsdam, Germany - 11/2022 - 03/2023}
 \explanationdetail{
-	I tutored and supported student groups during their software project in relation to the 'Scalable Software Engineering' lecture, with a focus on agile development methodologies. I was also responsible for prototyping a browser-native tool for interactive data exploration of GitHub statistics using Jupyter notebooks. ({\href{https://github.com/chrisma/RepositoryGuide-Python}{\faGithub}})
+	\begin{coloreditemize}
+		\item Tutored and supported multiple student groups during the 'Scalable Software Engineering' lecture, with a focus on agile development methodologies.
+		\item Prototyped a browser-native tool for interactive data exploration of GitHub statistics using Jupyter. {\href{https://github.com/chrisma/RepositoryGuide-Python}{\faGithub}}
+	\end{coloreditemize}
 }
 %
 \datedExperienceTitle{Microsoft}{Site Reliability Engineer, Intern}{Dublin, Ireland - 09/2022 - 11/2022}
 \explanationdetail{
-	I was responsible for creating entirely new monitoring probes covering core Azure services for the synthetic monitoring of the Azure Resource Manager Control Plane, allowing on-call engineers to identify and mitigate incidents that potentially affect millions of customers earlier \& more reliably.
+	\begin{coloreditemize}
+		\item Created three types of entirely new automated monitoring probes for the synthetic monitoring of the Azure Resource Manager Control Plane, each testing read-write operations of 10+ core Azure services.
+		\item Enabled on-call engineers to identify and mitigate incidents that potentially affect millions of customers earlier \& more reliably.
+		\item Worked extensively with the extended SRE team to ensure the probes provide the desired new insights.
+		\item Investigated and resolved compatibility issues with the monitoring ecosystem following the deployment of the new probes.
+		\item Presented the results of my project to other engineers during an organization-wide weekly Q\&A session.
+	\end{coloreditemize}
 }
 %
 \datedExperienceTitle{Northern German Broadcasting Company}{Intern}{Kiel, Germany - 07/2018}
-\explanationdetail{
-	I was involved in all steps of the production of the daily evening news, including report filming and live taping.
-}
 %
 \datedExperienceTitle{Enterprise Garage Consultancy}{Intern}{San Francisco, California - 06/2017 - 07/2017}
 \explanationdetail{
-	I conducted and edited video interviews with lead engineers from Tesla and Lucid, aiding research for a book publication. I also assisted in introducing the "Silicon Valley Mindset" to company delegations from abroad.
+	\begin{coloreditemize}
+		\item Conducted and edited video interviews with lead engineers from Tesla and Lucid.
+		\item Helped introduce the "Silicon Valley Mindset" to company delegations from abroad.
+	\end{coloreditemize}
 }
 %
 % Education
@@ -39,8 +49,11 @@
 \datedexperience{Hasso-Plattner-Institute}{Potsdam, Germany - 2019 - 2023}
 \explanation{B.Sc., IT-Systems Engineering, Grade 1.7}
 \explanationdetail{
-	Bachelor's project: \emph{"Online Marketplace Simulation: A Testbed for Self-Learning Agents"} - Grade 1.0 ({\href{https://github.com/hpi-epic/BP2021}{\faGithub}})\\
-	Bachelor's thesis: \emph{"Monitoring of Agents for Dynamic Pricing in different Recommerce Markets"} - Grade 1.3 ({\href{https://github.com/NikkelM/bachelor-thesis}{\faGithub}})}
+	\begin{coloreditemize}
+		\item Bachelor's project: \emph{'Online Marketplace Simulation: A Testbed for Self-Learning Agents'} - Grade 1.0 {\href{https://github.com/hpi-epic/BP2021}{\faGithub}}
+		\item Bachelor's thesis: \emph{'Monitoring of Agents for Dynamic Pricing in different Recommerce Markets'} - Grade 1.3 {\href{https://github.com/NikkelM/bachelor-thesis}{\faGithub}}
+	\end{coloreditemize}
+}
 %
 \datedexperience{European School of Varese}{Varese, Italy - 2014 - 2019}
 \explanation{European Baccalaureate, Grade 91.23}
@@ -49,23 +62,34 @@
 \section{Projects}
 \explanation{These are some of my favourite projects. You can find them and all others on my {\href{https://github.com/NikkelM}{\faGithub\ GitHub}} profile.}
 %
-\datedExperienceTitle{Random YouTube Video}{}{Browser extension}
+\datedExperienceLink{Random YouTube Video}{\href{https://chrome.google.com/webstore/detail/random-youtube-video/kijgnjhogkjodpakfmhgleobifempckf}{Chrome}, \href{https://addons.mozilla.org/en-US/firefox/addon/random-youtube-video/}{Firefox}, \href{https://microsoftedge.microsoft.com/addons/detail/random-youtube-video/fccfflipicelkilpmgniblpoflkbhdbe}{Edge}, \href{https://github.com/NikkelM/Random-YouTube-Video}{\faGithub{} GitHub}}{Browser extension}
 \explanationdetail{
-	A browser extension for Chromium browsers and Firefox that allows users to shuffle truly random videos from any channel. (\href{https://github.com/NikkelM/Random-YouTube-Video}{\faGithub}, \href{https://chrome.google.com/webstore/detail/random-youtube-video/kijgnjhogkjodpakfmhgleobifempckf}{Chrome}, \href{https://addons.mozilla.org/en-US/firefox/addon/random-youtube-video/}{Firefox}, \href{https://microsoftedge.microsoft.com/addons/detail/random-youtube-video/fccfflipicelkilpmgniblpoflkbhdbe}{Edge})\\
-	Technologies: Javascript, Webpack, Mocha, Firebase (Realtime Database), Chrome APIs, YouTube Data API.
+	\begin{coloreditemize}
+		\item YouTube extension that inserts 'Shuffle' buttons on channel and video pages.
+		\item Offers a variety of customization options, such as excluding shorts or shuffling only from recent videos.
+		\item More than 1,000 weekly active users as of July 2023.
+		\item Technologies: Javascript, Webpack, Mocha (testing), Firebase (RTDB), Chrome APIs, YouTube Data API.
+	\end{coloreditemize}
 }
 %
-\datedExperienceTitle{Outlook Mail Notes}{}{Microsoft Office Add-In}
+\datedExperienceLink{Outlook Mail Notes}{\href{https://github.com/NikkelM/Outlook-Mail-Notes}{\faGithub{} GitHub}}{Microsoft Office Add-In}
 \explanationdetail{
-	This Add-In allows users to add notes to e-mails, which are synchronized using the Outlook account. (\href{https://github.com/NikkelM/Outlook-Mail-Notes}{\faGithub})\\
-	Technologies: Javascript, Office API, Quill.js.
+	\begin{coloreditemize}
+		\item Microsoft Outlook Add-In that allows users to add notes to e-mails, conversations and senders.
+		\item Synchronized using the user's Outlook account.
+		\item Automatically manages message categories to indicate what kind of note is attached to the message.
+		\item Technologies: Typescript, Office API, Quill.js.
+	\end{coloreditemize}
 }
 %
-\datedExperienceTitle{JSON-to-Notion, Steam API integration}{}{Notion integrations}
+\datedExperienceLink{JSON-to-Notion, Steam API integration}{}{Notion integrations}
 \explanationdetail{
-	The JSON-to-Notion tool can be used to import JSON-formatted data to a Notion database, eliminating the need to convert the data to CSV beforehand. (\href{https://github.com/NikkelM/JSON-to-Notion}{\faGithub})\\
-	The Steam API integration enables synchronizing and importing data from the Steam API to Notion. (\href{https://github.com/NikkelM/Notion-Steam-API-Integration}{\faGithub})\\
-	Technologies: Javascript, Notion and Steam APIs, JSON schema definition \& validation.
+	\begin{coloreditemize}
+		\item  JSON-to-Notion: Imports JSON-formatted data to a Notion database, eliminating the need to convert the data to CSV beforehand. (\href{https://github.com/NikkelM/JSON-to-Notion}{\faGithub{} GitHub})
+		\item Steam API integration: Synchronizes and imports data from the Steam API to Notion if a Steam App ID is provided in a Notion data entry (\href{https://github.com/NikkelM/Notion-Steam-API-Integration}{\faGithub{} GitHub}).
+		\item Both tools provide extensive customization options, checked against JSON schemas.
+		\item Technologies: Javascript, Notion and Steam APIs, JSON schema definition \& validation.
+	\end{coloreditemize}
 }
 % Some extra padding to align the next section
 % \\
@@ -79,28 +103,28 @@
 % \explanationdetail{Image-Movie of the school, Open Day 2019, 2015-2019 End-of-Year Closing Ceremonies}
 %
 % Skills
-\section{Skills}
-%
-\newcommand{\skillprogramming}{\createskill{Programming Languages}{
-		\textbf{\emph{Experienced:}} \ \ Python \cpshalf C\# \cpshalf Javascript \ \ }}
-\newcommand{\skillprogrammingtwo}{\createskill{}{
-		\textbf{\emph{Familiar:}} \ \ C++ \cpshalf C \cpshalf Ruby (on Rails) \cpshalf Squeak/Smalltalk}}
-%
-\newcommand{\skillsoftdev}{\createskill{Software Development}{
-		CI/CD \cpshalf Azure \& Azure DevOps \cpshalf Git \& GitHub \cpshalf Agile methodology \& Scrum}}
-\newcommand{\skillsoftdevtwo}{\createskill{}{
-		OOP \cpshalf Docker \cpshalf TTD \cpshalf Automated Pipelines \cpshalf Machine Learning}}
+% \section{Skills}
 % %
-% \newcommand{\skillframeworks}{\createskill{Frameworks \ \& \ Libraries}{
-% 		PyTorch \cpshalf Vite \cpshalf OpenTelemetry \cpshalf Django \cpshalf Three.js}}
-%
-\newcommand{\skilllanguages}{\createskill{Languages}{
-		\textbf{\emph{Native}} German \ \
-		\textbf{\emph{Fluent:}} English \ \
-		\textbf{\emph{Intermediate:}} Italian}}
-%
-% \createskills{\skillprogramming, \skillprogrammingtwo, \skillsoftdev, \skillsoftdevtwo, \skillframeworks, \skilllanguages}
-\createskills{\skillprogramming, \skillprogrammingtwo, \skillsoftdev, \skillsoftdevtwo, \skilllanguages}
+% \newcommand{\skillprogramming}{\createskill{Programming Languages}{
+% 		\textbf{\emph{Experienced:}} \ \ Python \cpshalf C\# \cpshalf Javascript \ \ }}
+% \newcommand{\skillprogrammingtwo}{\createskill{}{
+% 		\textbf{\emph{Familiar:}} \ \ C++ \cpshalf C \cpshalf Ruby (on Rails) \cpshalf Squeak/Smalltalk}}
+% %
+% \newcommand{\skillsoftdev}{\createskill{Software Development}{
+% 		CI/CD \cpshalf Azure \& Azure DevOps \cpshalf Git \& GitHub \cpshalf Agile methodology \& Scrum}}
+% \newcommand{\skillsoftdevtwo}{\createskill{}{
+% 		OOP \cpshalf Docker \cpshalf TTD \cpshalf Automated Pipelines \cpshalf Machine Learning}}
+% % %
+% % \newcommand{\skillframeworks}{\createskill{Frameworks \ \& \ Libraries}{
+% % 		PyTorch \cpshalf Vite \cpshalf OpenTelemetry \cpshalf Django \cpshalf Three.js}}
+% %
+% \newcommand{\skilllanguages}{\createskill{Languages}{
+% 		\textbf{\emph{Native}} German \ \
+% 		\textbf{\emph{Fluent:}} English \ \
+% 		\textbf{\emph{Intermediate:}} Italian}}
+% %
+% % \createskills{\skillprogramming, \skillprogrammingtwo, \skillsoftdev, \skillsoftdevtwo, \skillframeworks, \skilllanguages}
+% \createskills{\skillprogramming, \skillprogrammingtwo, \skillsoftdev, \skillsoftdevtwo, \skilllanguages}
 
 
 %
