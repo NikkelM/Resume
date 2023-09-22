@@ -122,7 +122,7 @@
 
 \newenvironment{coloreditemize}{
   \begin{itemize}[
-      leftmargin=20pt, % How much extra space on the left of the itemize environment.
+      leftmargin=15pt, % How much extra space on the left of the itemize environment.
       label=\textcolor{\@themecolor}{\textbullet},
       itemsep=0pt,
       parsep=0pt
@@ -139,11 +139,13 @@
 {}{0em}                      % Can be used to give a prefix to all sections, like 'Section ...'
 {\ruleafter}                           % Can be used to insert code before the heading
 
-\titlespacing*{\section}{-1pt}{-5pt}{0pt}
+% To adjust spacing above, change second argument
+\titlespacing*{\section}{-1pt}{-12pt}{0pt}
 
 % Textview commands
 
 \newcommand{\experience}[2]{%
+% TODO: Does hspace need to be removed here?
   \mbox { \hspace{1em} \textbf{#1} }%
 }
 
@@ -153,29 +155,29 @@
 
 % To be used with an \explanation right below. Less bottom margin than \datedExperienceTitle
 \newcommand{\datedexperience}[2]{%
-  \begin{small} \mbox { \hspace{1em} \textbf{#1} } \end{small} \hfill \datetext{#2}\\[0.05cm] %
+  \begin{small} \mbox { \textbf{#1} } \end{small} \hfill \datetext{#2}\\[0.05cm] %
 }
 
 \newcommand{\datedExperienceTitle}[3]{%
-  \begin{small} \mbox { \hspace{1em} \textbf{#1} } { \textit{#2} } \end{small} \hfill \datetext{#3}\\[0.2cm] %
+  \begin{small} \mbox { \textbf{#1} } { \textit{#2} } \end{small} \hfill \datetext{#3}\\[0.2cm] %
 }
 
 % Second argument is to be used for a \href, will be smaller
 \newcommand{\datedExperienceLink}[3]{%
-  \begin{small} \mbox { \hspace{1em} \textbf{#1} } \end{small} \begin{footnotesize} {#2} \end{footnotesize} \hfill \datetext{#3}\\[0.2cm] %
+  \begin{small} \mbox { \textbf{#1} } \end{small} \begin{footnotesize} {#2} \end{footnotesize} \hfill \datetext{#3}\\[0.2cm] %
 }
 
 % Third argument is to be used for a \href. Also includes an italic title/position argument
 \newcommand{\datedExperienceTitleLink}[4]{%
-  \begin{small} \mbox { \hspace{1em} \textbf{#1} } { \textit{#2} } \end{small} \begin{footnotesize} {#3} \end{footnotesize} \hfill \datetext{#4}\\[0.2cm] %
+  \begin{small} \mbox { \textbf{#1} } { \textit{#2} } \end{small} \begin{footnotesize} {#3} \end{footnotesize} \hfill \datetext{#4}\\[0.2cm] %
 }
 % 
 \newcommand{\explanation}[1]{%
-  \mbox { \itshape \hspace{1em} \footnotesize #1}\\[0.2cm]
+  \mbox { \itshape \footnotesize #1}\\[0.2cm]
 }
 
 \newcommand{\explanationdetail}[1]{%
-  \indent \begin{minipage}{0.96\linewidth} \footnotesize #1 \end{minipage} \\[0.2cm]
+  \begin{minipage}{0.96\linewidth} \footnotesize #1 \end{minipage} \\[0.2cm]
 }
 
 \newcommand{\itemwithtext}[1]{%
@@ -217,4 +219,4 @@
 \newcommand\createfootnote{%
   \renewcommand{\footnotesize}{\fontsize{7pt}{11pt}\selectfont}
   \renewcommand*\footnoterule{}
-  \let\thefootnote\relax\footnote{\today{} - Hosted on \href{https://github.com/NikkelM/Resume}{\faGithub{} GitHub}}}
+  \let\thefootnote\relax\footnote{\today{} - View on \href{https://github.com/NikkelM/Resume}{\faGithub{} GitHub}}}
