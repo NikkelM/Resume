@@ -28,6 +28,9 @@
 \newcommand*{\setlinkedinaccount}[1]{\def\@linkedinaccount{#1}}
 \newcommand*{\setgithubaccount}[1]{\def\@githubaccount{#1}}
 \newcommand*{\setportfolio}[1]{\def\@portfolio{#1}}
+\newcommand*{\setlinkedinaccountdisplay}[1]{\def\@linkedinaccountdisplay{#1}}
+\newcommand*{\setgithubaccountdisplay}[1]{\def\@githubaccountdisplay{#1}}
+\newcommand*{\setportfoliodisplay}[1]{\def\@portfoliodisplay{#1}}
 
 
 %Setup for coverletter
@@ -52,13 +55,13 @@
       \hfill
       \begin{minipage}{0.8\linewidth}
         \center \name \\%[0.05cm]
-        \contact % address \ mobile \\ mail
+        \contact
       \end{minipage}
     }}
   {\newcommand\headerview{
       \begin{minipage}{\linewidth}
         \center \name \\%[0.05cm]
-        \contact % address \ mobile \\ mail
+        \contact
       \end{minipage}
     }}%
 }
@@ -78,17 +81,18 @@
 
 %contactsubviews 
 
-\newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedin\ \footnotesize Linkedin.com/in/nikkel-mollenhauer}}
-\newcommand{\linkedinview}{\href{\@githubaccount}{\faGithub\ \footnotesize Github.com/NikkelM}}
-\newcommand{\portfolioview}{\href{\@portfolio}{\faGlobe\ \footnotesize NikkelM.dev}}
-\newcommand{\locationview}{Dublin, Ireland}
+\newcommand{\githubview}{\faLinkedin\ \href{\@linkedinaccount}{\footnotesize \@linkedinaccountdisplay}}
+\newcommand{\linkedinview}{\faGithub\ \href{\@githubaccount}{\footnotesize \@githubaccountdisplay}}
+\newcommand{\portfolioview}{\faGlobe\ \href{\@portfolio}{\footnotesize \@portfoliodisplay}}
+\newcommand{\emailview}{\faEnvelope\ \@mail}
+\newcommand{\locationview}{\faMapMarker\ Dublin, Ireland}
 
 \newcommand{\name}{%
   {\large \@firstname \ \textsc{\@lastname}}
 }
 
 \newcommand{\contact}{%
-  {\small \@mail\ \cpshalf \@mobile\ \cpshalf \locationview\ \\
+  {\small \emailview\ \cpshalf \locationview\ \\
       \linkedinview\ \cpshalf \githubview\ \cpshalf \portfolioview\ \\
     }
 }
