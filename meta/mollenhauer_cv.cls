@@ -7,15 +7,17 @@
 \RequirePackage{pgffor}
 \RequirePackage{titlesec}
 \RequirePackage{tikz}
-\RequirePackage[left=0.6in,top=0.25in,right=0.6in,bottom=0.2in]{geometry} % Document margins
+\RequirePackage[left=0.4in,top=0.25in,right=0.4in,bottom=0.15in]{geometry} % Document margins
 \RequirePackage{hyperref}
 \RequirePackage{fontawesome}
 \RequirePackage{mfirstuc}
 \RequirePackage{ifthen}
 \RequirePackage{lipsum}
 \RequirePackage{array}
+\usepackage[absolute]{textpos}
 \pagestyle{empty}
 \RequirePackage{enumitem}
+\renewcommand{\footnotesize}{\fontsize{9pt}{11pt}\selectfont}
 
 %Setup
 
@@ -149,9 +151,8 @@
 
 % Textview commands
 
-\newcommand{\experience}[2]{%
-% TODO: Does hspace need to be removed here?
-  \mbox { \hspace{1em} \textbf{#1} }%
+\newcommand{\experience}[2]{
+  \mbox { \hspace{1em} \textbf{#1} }
 }
 
 \newcommand{\datetext}[1]{%
@@ -222,6 +223,8 @@
 }
 
 \newcommand\createfootnote{%
-  \renewcommand{\footnotesize}{\fontsize{7pt}{11pt}\selectfont}
-  \renewcommand*\footnoterule{}
-  \let\thefootnote\relax\footnote{\today{} - View on \href{https://github.com/NikkelM/Resume}{\faGithub{} GitHub}}}
+  \begin{textblock*}{\textwidth}(0.5cm,27.3cm) % Adjust these values as needed
+    \fontsize{7pt}{9pt}\selectfont
+    {\today{} - View on \href{https://github.com/NikkelM/Resume}{\faGithub{} GitHub}}
+  \end{textblock*}
+}
