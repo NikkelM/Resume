@@ -173,10 +173,16 @@
   \begin{small} \mbox { \textbf{#1} } \end{small} \begin{footnotesize} {#2} \end{footnotesize} \hfill \datetext{#3}\\[0.2cm] %
 }
 
+% Same as above, but smaller bottom margin
+\newcommand{\datedExperienceLinkSmall}[3]{%
+  \begin{small} \mbox { \textbf{#1} } \end{small} \begin{footnotesize} {#2} \end{footnotesize} \hfill \datetext{#3}\\[0.1cm] %
+}
+
 % Third argument is to be used for a \href. Also includes an italic title/position argument
 \newcommand{\datedExperienceTitleLink}[4]{%
   \begin{small} \mbox { \textbf{#1} } { \textit{#2} } \end{small} \begin{footnotesize} {#3} \end{footnotesize} \hfill \datetext{#4}\\[0.2cm] %
 }
+
 % 
 \newcommand{\explanation}[1]{%
   \mbox { \itshape \footnotesize #1}\\[0.2cm]
