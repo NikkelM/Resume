@@ -7,15 +7,17 @@
 \RequirePackage{pgffor}
 \RequirePackage{titlesec}
 \RequirePackage{tikz}
-\RequirePackage[left=0.6in,top=0.25in,right=0.6in,bottom=0.2in]{geometry} % Document margins
+\RequirePackage[left=0.4in,top=0.25in,right=0.4in,bottom=0.15in]{geometry} % Document margins
 \RequirePackage{hyperref}
 \RequirePackage{fontawesome}
 \RequirePackage{mfirstuc}
 \RequirePackage{ifthen}
 \RequirePackage{lipsum}
 \RequirePackage{array}
+\usepackage[absolute]{textpos}
 \pagestyle{empty}
 \RequirePackage{enumitem}
+\renewcommand{\footnotesize}{\fontsize{9pt}{11pt}\selectfont}
 
 %Setup
 
@@ -31,6 +33,7 @@
 \newcommand*{\setlinkedinaccountdisplay}[1]{\def\@linkedinaccountdisplay{#1}}
 \newcommand*{\setgithubaccountdisplay}[1]{\def\@githubaccountdisplay{#1}}
 \newcommand*{\setportfoliodisplay}[1]{\def\@portfoliodisplay{#1}}
+\newcommand*{\setlocationdisplay}[1]{\def\@locationdisplay{#1}}
 
 
 %Setup for coverletter
@@ -85,7 +88,7 @@
 \newcommand{\linkedinview}{\faGithub\ \href{\@githubaccount}{\footnotesize \@githubaccountdisplay}}
 \newcommand{\portfolioview}{\faGlobe\ \href{\@portfolio}{\footnotesize \@portfoliodisplay}}
 \newcommand{\emailview}{\faEnvelope\ \@mail}
-\newcommand{\locationview}{\faMapMarker\ Dublin, Ireland}
+\newcommand{\locationview}{\faMapMarker\ \@locationdisplay}
 
 \newcommand{\name}{%
   {\large \@firstname \ \textsc{\@lastname}}
@@ -148,9 +151,8 @@
 
 % Textview commands
 
-\newcommand{\experience}[2]{%
-% TODO: Does hspace need to be removed here?
-  \mbox { \hspace{1em} \textbf{#1} }%
+\newcommand{\experience}[2]{
+  \mbox { \hspace{1em} \textbf{#1} }
 }
 
 \newcommand{\datetext}[1]{%
@@ -171,10 +173,16 @@
   \begin{small} \mbox { \textbf{#1} } \end{small} \begin{footnotesize} {#2} \end{footnotesize} \hfill \datetext{#3}\\[0.2cm] %
 }
 
+% Same as above, but smaller bottom margin
+\newcommand{\datedExperienceLinkSmall}[3]{%
+  \begin{small} \mbox { \textbf{#1} } \end{small} \begin{footnotesize} {#2} \end{footnotesize} \hfill \datetext{#3}\\[0.1cm] %
+}
+
 % Third argument is to be used for a \href. Also includes an italic title/position argument
 \newcommand{\datedExperienceTitleLink}[4]{%
   \begin{small} \mbox { \textbf{#1} } { \textit{#2} } \end{small} \begin{footnotesize} {#3} \end{footnotesize} \hfill \datetext{#4}\\[0.2cm] %
 }
+
 % 
 \newcommand{\explanation}[1]{%
   \mbox { \itshape \footnotesize #1}\\[0.2cm]
@@ -221,6 +229,8 @@
 }
 
 \newcommand\createfootnote{%
-  \renewcommand{\footnotesize}{\fontsize{7pt}{11pt}\selectfont}
-  \renewcommand*\footnoterule{}
-  \let\thefootnote\relax\footnote{\today{} - View on \href{https://github.com/NikkelM/Resume}{\faGithub{} GitHub}}}
+  \begin{textblock*}{\textwidth}(0.5cm,27.3cm) % Adjust these values as needed
+    \fontsize{7pt}{9pt}\selectfont
+    {\today{} - View on \href{https://github.com/NikkelM/Resume}{\faGithub{} GitHub}}
+  \end{textblock*}
+}
