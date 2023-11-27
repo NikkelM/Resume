@@ -31,6 +31,7 @@
 \newcommand*{\setlinkedinaccountdisplay}[1]{\def\@linkedinaccountdisplay{#1}}
 \newcommand*{\setgithubaccountdisplay}[1]{\def\@githubaccountdisplay{#1}}
 \newcommand*{\setportfoliodisplay}[1]{\def\@portfoliodisplay{#1}}
+\newcommand*{\setlocationdisplay}[1]{\def\@locationdisplay{#1}}
 
 
 %Setup for coverletter
@@ -85,7 +86,7 @@
 \newcommand{\linkedinview}{\faGithub\ \href{\@githubaccount}{\footnotesize \@githubaccountdisplay}}
 \newcommand{\portfolioview}{\faGlobe\ \href{\@portfolio}{\footnotesize \@portfoliodisplay}}
 \newcommand{\emailview}{\faEnvelope\ \@mail}
-\newcommand{\locationview}{\faMapMarker\ Dublin, Ireland}
+\newcommand{\locationview}{\faMapMarker\ \@locationdisplay}
 
 \newcommand{\name}{%
   {\large \@firstname \ \textsc{\@lastname}}
