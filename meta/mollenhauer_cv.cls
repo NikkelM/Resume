@@ -189,7 +189,7 @@
 }
 
 \newcommand{\explanationdetail}[1]{%
-  \begin{minipage}{0.96\linewidth} \footnotesize #1 \end{minipage} \\[0.2cm]
+  \begin{minipage}{0.99\linewidth} \footnotesize #1 \end{minipage} \\[0.2cm]
 }
 
 \newcommand{\itemwithtext}[1]{%
