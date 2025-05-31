@@ -14,6 +14,7 @@
 \RequirePackage{ifthen}
 \RequirePackage{lipsum}
 \RequirePackage{array}
+\RequirePackage{tabularx}
 \usepackage[absolute]{textpos}
 \pagestyle{empty}
 \RequirePackage{enumitem}
@@ -147,7 +148,7 @@
 {\ruleafter}                           % Can be used to insert code before the heading
 
 % To adjust spacing above, change second argument
-\titlespacing*{\section}{-1pt}{-12pt}{0pt}
+\titlespacing*{\section}{-1pt}{-15pt}{0pt}
 
 % Textview commands
 
@@ -165,7 +166,7 @@
 }
 
 \newcommand{\datedExperienceTitle}[3]{%
-  \begin{small} \mbox { \textbf{#1} } { \textit{#2} } \end{small} \hfill \datetext{#3}\\[0.2cm] %
+  \begin{small} \mbox { \textbf{#1} } {\footnotesize \textit{#2}} \end{small} \hfill \datetext{#3}\\[0.2cm] %
 }
 
 % Second argument is to be used for a \href, will be smaller
@@ -173,9 +174,12 @@
   \begin{small} \mbox { \textbf{#1} } \end{small} \begin{footnotesize} {#2} \end{footnotesize} \hfill \datetext{#3}\\[0.2cm] %
 }
 
-% Same as above, but smaller bottom margin
+% Similar to above, but smaller bottom margin, and the second argument is aligned to be in the same column each line
 \newcommand{\datedExperienceLinkSmall}[3]{%
-  \begin{small} \mbox { \textbf{#1} } \end{small} \begin{footnotesize} {#2} \end{footnotesize} \hfill \datetext{#3}\\[0.1cm] %
+  \phantom{}\hspace{0.175em} 
+  \begin{tabularx}{\linewidth}{@{\extracolsep{\fill}} p{0.5\linewidth} >{\raggedright\arraybackslash}X r}
+    \begin{small}\textbf{#1}\end{small} & \begin{footnotesize}#2\end{footnotesize} & \hfill \datetext{#3\hspace{-0.54em}}  \\
+  \end{tabularx}\\[0.075cm] %
 }
 
 % Third argument is to be used for a \href. Also includes an italic title/position argument
