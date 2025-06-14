@@ -147,8 +147,8 @@
 {}{0em}                      % Can be used to give a prefix to all sections, like 'Section ...'
 {\ruleafter}                           % Can be used to insert code before the heading
 
-% To adjust spacing above, change second argument
-\titlespacing*{\section}{-1pt}{-15pt}{0pt}
+% To adjust spacing above, change second argument, for spacing below, the third argument
+\titlespacing*{\section}{-1pt}{-20pt}{3pt}
 
 % Textview commands
 
