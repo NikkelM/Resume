@@ -12,7 +12,6 @@
 \RequirePackage{fontawesome}
 \RequirePackage{mfirstuc}
 \RequirePackage{ifthen}
-\RequirePackage{lipsum}
 \RequirePackage{array}
 \RequirePackage{tabularx}
 \usepackage[absolute]{textpos}
@@ -85,8 +84,8 @@
 
 %contactsubviews 
 
-\newcommand{\githubview}{\faLinkedin\ \href{\@linkedinaccount}{\footnotesize \@linkedinaccountdisplay}}
-\newcommand{\linkedinview}{\faGithub\ \href{\@githubaccount}{\footnotesize \@githubaccountdisplay}}
+\newcommand{\githubview}{\faGithub\ \href{\@githubaccount}{\footnotesize \@githubaccountdisplay}}
+\newcommand{\linkedinview}{\faLinkedin\ \href{\@linkedinaccount}{\footnotesize \@linkedinaccountdisplay}}
 \newcommand{\portfolioview}{\faGlobe\ \href{\@portfolio}{\footnotesize \@portfoliodisplay}}
 \newcommand{\emailview}{\faEnvelope\ \@mail}
 \newcommand{\locationview}{\faMapMarker\ \@locationdisplay}
