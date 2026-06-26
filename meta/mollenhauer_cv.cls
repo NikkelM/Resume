@@ -160,6 +160,36 @@
   {\footnotesize \mdseries \color{black!60!\@themecolor} #1 }
 }
 
+% Like \datetext but without the surrounding padding spaces, for use inside fixed-width date boxes.
+\newcommand{\datetextnopad}[1]{%
+  {\footnotesize \mdseries \color{black!60!\@themecolor}#1}%
+}
+
+% Fixed widths for the start/end date columns, sized to the widest expected tokens so that date
+% ranges line up vertically across every experience entry. A small cushion is added to the start
+% column so proportional-width digits never overflow the box. \xpDateEndWidth covers "present".
+\newlength{\xpDateStartWidth}
+\newlength{\xpDateEndWidth}
+\settowidth{\xpDateStartWidth}{\footnotesize 00/0000}
+\addtolength{\xpDateStartWidth}{0.2em}
+\settowidth{\xpDateEndWidth}{\footnotesize present}
+
+% Colored hyphen separator with explicit surrounding space (spaces inside a colored group are
+% unreliable next to boxes, so spacing is set with \hspace by the callers below).
+\newcommand{\xpDateSep}{\hspace{0.33em}\datetextnopad{-}\hspace{0.33em}}
+
+% Fixed-width start/end date columns (no location): start right-aligned, end left-aligned, so the
+% start dates, the separating dash, and the end dates each form clean vertical columns. Anchored to
+% the right margin via the caller's \hfill, so these columns align across all experience entries.
+\newcommand{\xpDateCols}[2]{% #1 start  #2 end
+  \makebox[\xpDateStartWidth][r]{\datetextnopad{#1}}\xpDateSep\makebox[\xpDateEndWidth][l]{\datetextnopad{#2}}%
+}
+
+% Same as \xpDateCols but prefixed with a location (right-aligned ahead of the start column).
+\newcommand{\xpDate}[3]{% #1 location  #2 start  #3 end
+  \datetextnopad{#1}\xpDateSep\xpDateCols{#2}{#3}%
+}
+
 % To be used with an \explanation right below. Less bottom margin than \datedExperienceTitle
 \newcommand{\datedexperience}[2]{%
   \begin{small} \mbox { \textbf{#1} } \end{small} \hfill \datetext{#2}\\[0.05cm] %
@@ -167,6 +197,61 @@
 
 \newcommand{\datedExperienceTitle}[3]{%
   \begin{small} \mbox { \textbf{#1} } {\footnotesize \textit{#2}} \end{small} \hfill \datetext{#3}\\[0.2cm] %
+}
+
+% Single experience entry with aligned date columns. Location/start/end are passed separately so the
+% date range lines up with every other experience entry (see \xpDate).
+% #1 company  #2 title  #3 location  #4 start  #5 end
+\newcommand{\datedExperienceEntry}[5]{%
+  \begin{small} \mbox { \textbf{#1} } {\footnotesize \textit{#2}} \end{small} \hfill \xpDate{#3}{#4}{#5}\\[0.2cm] %
+}
+
+\newif\ifxpPromoFirst
+\newcommand{\xpPromoCompany}{}
+\newcommand{\xpPromoLoc}{}
+\newlength{\xpRoleWidth}
+
+% Measures the role (part before the dash) of one promotion row, tracking the widest into
+% \xpRoleWidth so the dash and org/team line up across rows. #1 role  #2 org  #3 start  #4 end
+\newcommand{\xpMeasureRole}[4]{%
+  \settowidth{\dimen@}{\footnotesize\itshape #1}%
+  \ifdim\dimen@>\xpRoleWidth \global\xpRoleWidth=\dimen@ \fi
+}
+
+% Typesets a promotion title: the role left-aligned in a fixed-width column (so the dash aligns
+% across rows), followed by " - org" only when an org is given. #1 role  #2 org
+\newcommand{\xpTitle}[2]{%
+  {\footnotesize\itshape \makebox[\xpRoleWidth][l]{\footnotesize\itshape #1}\notblank{#2}{ - #2}{}}%
+}
+
+% Renders one role row inside \datedExperiencePromotion. The first row shows the company (bold) and
+% location; later rows indent under the title and omit the location, keeping the date columns aligned.
+% #1 role  #2 org  #3 start  #4 end
+\newcommand{\xpPromoRow}[4]{%
+  \ifxpPromoFirst
+    \begin{small} \mbox { \textbf{\xpPromoCompany} } \xpTitle{#1}{#2} \end{small} \hfill \xpDate{\xpPromoLoc}{#3}{#4}%
+    \global\xpPromoFirstfalse
+  \else
+    \begin{small} \mbox { \phantom{\textbf{\xpPromoCompany}} } \xpTitle{#1}{#2} \end{small} \hfill \xpDateCols{#3}{#4}%
+  \fi
+}
+
+% Experience entry for one or more promotions within the same company. The company and location are
+% shown once; each role is a {role}{org}{start}{end} quadruple, current first, listed top to bottom
+% with tight spacing so they read as a single continuous role. Works for any number of roles
+% (including just one). The role/org titles align on the dash, and date ranges align with each other
+% and with every other experience entry. Pass an empty org ({}) to show a role with no team suffix.
+% #1 company  #2 location  #3 comma-separated list of {role}{org}{start}{end} quadruples
+\newcommand{\datedExperiencePromotion}[3]{%
+  \renewcommand{\xpPromoCompany}{#1}\renewcommand{\xpPromoLoc}{#2}%
+  \global\xpRoleWidth=0pt
+  \foreach \xpRow in {#3}{\expandafter\xpMeasureRole\xpRow}%
+  \global\xpPromoFirsttrue
+  \foreach \xpRow in {#3}{%
+    \ifxpPromoFirst\else\\[-0.12cm]\fi
+    \expandafter\xpPromoRow\xpRow
+  }%
+  \\[0.2cm]%
 }
 
 % Second argument is to be used for a \href, will be smaller
