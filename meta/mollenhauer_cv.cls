@@ -258,11 +258,11 @@
   \begin{small} \mbox { \textbf{#1} } \end{small} \begin{footnotesize} {#2} \end{footnotesize} \hfill \datetext{#3}\\[0.2cm] %
 }
 
-% Similar to above, but smaller bottom margin, and the second argument is aligned to be in the same column each line
+% Similar to above, but smaller bottom margin, not bolded, and the second argument is aligned to be in the same column each line
 \newcommand{\datedExperienceLinkSmall}[3]{%
   \phantom{}\hspace{0.175em} 
   \begin{tabularx}{\linewidth}{@{\extracolsep{\fill}} p{0.5\linewidth} >{\raggedright\arraybackslash}X r}
-    \begin{small}\textbf{#1}\end{small} & \begin{footnotesize}#2\end{footnotesize} & \hfill \datetext{#3\hspace{-0.54em}}  \\
+    \begin{small}{#1}\end{small} & \begin{footnotesize}#2\end{footnotesize} & \hfill \datetext{#3\hspace{-0.54em}}  \\
   \end{tabularx}\\[0.075cm] %
 }
 
